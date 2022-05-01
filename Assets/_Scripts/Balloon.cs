@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathZone : MonoBehaviour
+public class Balloon : MonoBehaviour
 {
-
-    //private GameObject otherGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +22,14 @@ public class DeathZone : MonoBehaviour
         switch (otherGO.tag)
         {
             case "Bee":
-                Destroy(otherGO);
-                Main.S.BeeDied();
+                Destroy(this.gameObject);
+                // Scoring not yet implemented
+                //Main.S.BalloonPop();
                 break;
             default:
                 print("Not the bee");
                 break;
         }
     }
+
 }
