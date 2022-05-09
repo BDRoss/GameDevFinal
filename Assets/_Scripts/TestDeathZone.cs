@@ -46,7 +46,7 @@ public class TestDeathZone : DeathZone
         }*/
 
 
-        print(transform.localScale.x);
+        //print(transform.localScale.x);
         if (sinTime > 0)
         {
             scale = new Vector3(transform.localScale.x, Mathf.Abs((sinTime * reachY)) + 2.454f, transform.localScale.z); //Magic numbers bad
@@ -58,7 +58,7 @@ public class TestDeathZone : DeathZone
         if ((xory && transform.localScale.y == 2.454) || (!xory && transform.localScale.x == 2.454))
         {
             xory = !xory;
-            print(xory);
+            //print(xory);
         }
 
         //Vector3 scale = new Vector3(transform.localScale.x, Mathf.Abs(Mathf.Sin(Time.time) * reach) + 0.5f, transform.localScale.z);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour
 {
+    bool sentPopMessage = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,12 @@ public class Balloon : MonoBehaviour
         switch (otherGO.tag)
         {
             case "Bee":
+                if (!sentPopMessage)
+                {
+                    Main.S.BalloonPop();
+                    sentPopMessage = true;
+                }
                 Destroy(this.gameObject);
-                // Scoring not yet implemented
-                //Main.S.BalloonPop();
                 break;
             default:
                 print("Not the bee");
