@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-
+    bool sentDeathMessage = false;
     //private GameObject otherGO;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,12 @@ public class Bomb : MonoBehaviour
         switch (otherGO.tag)
         {
             case "Bee":
-                Destroy(otherGO);
+                //if (!sentDeathMessage)
+                //{
                 Main.S.BeeDied();
+                    //sentDeathMessage = true;
+                //}
+                Destroy(otherGO);
                 break;
             default:
                 print("Not the bee");
