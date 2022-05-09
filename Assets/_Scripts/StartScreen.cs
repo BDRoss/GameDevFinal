@@ -30,5 +30,6 @@ public class StartScreen : MonoBehaviour
         PlayerInfo.P.setInfo(userID.text, Time.time);
         uID = userID.text;
         SceneManager.LoadScene("_Level_1");
+        //SceneManager.LoadScene("_Alpha_Scene 1");
     }
 }

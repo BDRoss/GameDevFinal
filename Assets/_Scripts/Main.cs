@@ -39,14 +39,32 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        S = this;
+        if (Main.S != null)
+        {
+            Main temp = Main.S;
+            S = this;
+            // The following is necessary because I didn't think through the implications of singleton programming and multiple scenes
+            level = temp.getLevel();
+            print(level);
+            sessionScore = temp.GetScore();
+            //startTime = temp.getStartTime();
+            Destroy(temp);
+        }
+        else S = this;
         //print(PlayerInfo.P.userID); // Just testing
         startTime = Time.time;
         timeLimit = 240; // 4 minute time limit per session
         //timeLimit = 10; // Test value
         randBalloonColor(); // Will have to reuse this each scene
         print(numBalloons);
+        DontDestroyOnLoad(gameObject);
     }
+
+    public int getLevel()
+    {
+        return level;
+    }
+
 
     //Function randomized balloon color, and also stores the total number of balloons found in scene
     void randBalloonColor()

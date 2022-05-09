@@ -46,14 +46,14 @@ public class Game_Over_Script : MonoBehaviour
         {
             using (StreamWriter sw = File.CreateText(savePath))
             {
-                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score + " Feedback: " + feedback);
+                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score + " Feedback: " + feedback + ",");
             }
         }
         else
         {
             using (StreamWriter sw = File.AppendText(savePath))
             {
-                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + "Score: " + score);
+                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score);
             }
         }
     }
