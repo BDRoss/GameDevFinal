@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-
+    bool sentDeathMessage = false;
     //private GameObject otherGO;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,12 @@ public class DeathZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+                sentDeathMessage = false; // Reset Death signal at fixed intervals - just need to prevent constant signalling
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
     protected void OnCollisionEnter(Collision coll)
@@ -24,8 +29,12 @@ public class DeathZone : MonoBehaviour
         switch (otherGO.tag)
         {
             case "Bee":
-                Destroy(otherGO);
+                //if (!sentDeathMessage)
+                //{
                 Main.S.BeeDied();
+                //sentDeathMessage = true;
+               // }
+                Destroy(otherGO);
                 break;
             default:
                 print("Not the bee");
