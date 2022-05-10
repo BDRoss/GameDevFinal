@@ -1,8 +1,2 @@
-uID: BDRoss TimeOfDayPlayed: 25.26913 Score: 300 Feedback: ,
-uID: BDRoss TimeOfDayPlayed: 11.53695 Score: 300
-uID: BDRoss Feedback: 
-uID: TestUser TimeOfDayPlayed: 3.694921 Score: 0
-uID: TestUser Feedback: 
-uID: TestUser TimeOfDayPlayed: 3.86865 Score: 0
-uID: TestUser Feedback: Fix your feedback button!
-uID: TestUser Feedback: Fix your feedback button!
+uID: BDRoss TimeOfDayPlayed: 32.44643 Score: 300
+uID: BDRoss Feedback: Winning hurts my eyes!

@@ -19,7 +19,11 @@ public class StartScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(userID.text != "")
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        if (userID.text != "")
         {
             startButton.interactable = true;
         }
