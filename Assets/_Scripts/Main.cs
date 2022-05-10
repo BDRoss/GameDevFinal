@@ -20,7 +20,7 @@ public class Main : MonoBehaviour
     private int sessionScore = 0;
     private int lives = 3;
     private int numBalloons;
-    private int level = 1;
+    public int level = 1;
     private int timeLimit;
     private float startTime;
     private int poppedBalloons = 0;

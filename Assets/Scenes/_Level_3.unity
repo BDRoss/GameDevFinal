@@ -3803,6 +3803,7 @@ MonoBehaviour:
   life1: {fileID: 848247988}
   life2: {fileID: 451562817}
   life3: {fileID: 457124584}
+  level: 3
   beePrefab: {fileID: 1046869630431942, guid: c717f817a496cf247a92b830b355a407, type: 3}
   playButton: {fileID: 1548034538}
 --- !u!1 &568533032 stripped
