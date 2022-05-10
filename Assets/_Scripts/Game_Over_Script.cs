@@ -75,7 +75,7 @@ public class Game_Over_Script : MonoBehaviour
 
     public void submitFeedback()
     {
-        //feedback = 
+        feedback = feedbackText.text;
         if (!File.Exists(savePath))
         {
             using (StreamWriter sw = File.CreateText(savePath))
