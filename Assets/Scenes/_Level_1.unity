@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 2104438866}
-  speed: 5
+  speed: 4
 --- !u!114 &463437152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,6 +1570,7 @@ MonoBehaviour:
   life1: {fileID: 785156608}
   life2: {fileID: 1747874135}
   life3: {fileID: 1760155825}
+  level: 1
   beePrefab: {fileID: 1046869630431942, guid: c717f817a496cf247a92b830b355a407, type: 3}
   playButton: {fileID: 1548034538}
 --- !u!1 &587915201
