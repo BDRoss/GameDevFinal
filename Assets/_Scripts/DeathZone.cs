@@ -56,7 +56,7 @@ public class DeathZone : MonoBehaviour
                 //{
                 //    return;
                 //}
-                print("No destruction?");
+                //print("No destruction?");
                 Destroy(other.gameObject);
                 Main.S.BeeDied();
                 //sentDeathMessage = true;

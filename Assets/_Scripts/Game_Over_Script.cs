@@ -20,7 +20,7 @@ public class Game_Over_Script : MonoBehaviour
         {
             reason = Main.S.GameOverReason();
             score = Main.S.GetScore();
-            Destroy(Main.S); // Again, Singleton problems - reset with new game
+            Destroy(Main.S.gameObject); // Again, Singleton problems - reset with new game
         }
         //int score = Main.S.GetScore();
         //int score = 0;
@@ -50,7 +50,7 @@ public class Game_Over_Script : MonoBehaviour
         }
         if (score > hi)
         {
-            GameOverText.text = GameOverText.text + "You beat the previous high score!  Look forward to seeing your score up here next time!\n";
+            GameOverText.text = GameOverText.text + " You beat the previous high score!\n";
         }
         if(!Directory.Exists(@".\SaveData\"))
         {

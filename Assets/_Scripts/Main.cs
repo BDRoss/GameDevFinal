@@ -39,16 +39,17 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (Main.S != null)
+        if (S != null)
         {
-            Main temp = Main.S;
+            Main temp = S;
             S = this;
             // The following is necessary because I didn't think through the implications of singleton programming and multiple scenes
             level = temp.getLevel();
             print(level);
             sessionScore = temp.GetScore();
             //startTime = temp.getStartTime();
-            Destroy(temp);
+            Destroy(temp.gameObject);
+            //Destroy(temp);
         }
         else S = this;
         //print(PlayerInfo.P.userID); // Just testing
@@ -115,7 +116,7 @@ public class Main : MonoBehaviour
     public void BalloonPop()
     {
         //Handle balloon popping here
-        score += 100 / numBalloons; // Could decide on different max score per level, undetermined
+        score += (int)(100 / numBalloons) + 1; // Could decide on different max score per level, undetermined
         poppedBalloons++;
         if (poppedBalloons == numBalloons)
         {
@@ -208,13 +209,13 @@ public class Main : MonoBehaviour
         level++;
         if(level > 3)
         {
-            sessionScore += score;
+            //sessionScore += score;
             gameOverReason = "Win";
             SceneManager.LoadScene("_End_Screen");
         }
         else
         {
-            sessionScore += score;
+            //sessionScore += score;
             string newLevel = "_level_" + level;
             SceneManager.LoadScene(newLevel);
         }
