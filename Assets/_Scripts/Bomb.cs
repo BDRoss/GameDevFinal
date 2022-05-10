@@ -26,10 +26,11 @@ public class Bomb : MonoBehaviour
             case "Bee":
                 //if (!sentDeathMessage)
                 //{
+                Destroy(otherGO);
                 Main.S.BeeDied();
                     //sentDeathMessage = true;
                 //}
-                Destroy(otherGO);
+                
                 break;
             default:
                 print("Not the bee");
