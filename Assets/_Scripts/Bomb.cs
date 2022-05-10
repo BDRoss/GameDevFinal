@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    bool sentDeathMessage = false;
+    //bool sentDeathMessage = false;
     //private GameObject otherGO;
     // Start is called before the first frame update
     void Start()

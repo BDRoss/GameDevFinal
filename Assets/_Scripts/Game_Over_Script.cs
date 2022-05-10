@@ -10,12 +10,20 @@ public class Game_Over_Script : MonoBehaviour
     public Text GameOverText;
     string savePath = @".\SaveData\data.txt";
     string feedback = "";
+    string reason = "Lives";
+    int score = 0;
 
     // Start is called before the first frame update
     void Awake()
     {
+        if (Main.S != null)
+        {
+            reason = Main.S.GameOverReason();
+            score = Main.S.GetScore();
+            Destroy(Main.S); // Again, Singleton problems - reset with new game
+        }
         //int score = Main.S.GetScore();
-        int score = 0;
+        //int score = 0;
         int hi = 0;
         
         if (PlayerPrefs.HasKey("HighScore"))
@@ -24,13 +32,13 @@ public class Game_Over_Script : MonoBehaviour
             if (score > hi) PlayerPrefs.SetInt("HighScore", score);
         }
         else PlayerPrefs.SetInt("HighScore", score);
-        if (Main.S.GameOverReason() == "Lives")
+        if (reason == "Lives")
         {
-            GameOverText.text = "You've run out of lives. Too bad! You scored " + Main.S.GetScore() + " points! The highest score was " + hi + "!";
+            GameOverText.text = "You've run out of lives. Too bad! You scored " + score + " points! The highest score was " + hi + "!";
         }
         else
         {
-            GameOverText.text = "You've run out of time. Too bad! You scored " + Main.S.GetScore() + " points! The highest score was " + hi + "!";
+            GameOverText.text = "You've run out of time. Too bad! You scored " + score + " points! The highest score was " + hi + "!";
             //GameOverText.text = "You've run out of time. Too bad! You scored " + 0 + " points! The highest score was " + hi + "!";
 
         }
@@ -61,6 +69,7 @@ public class Game_Over_Script : MonoBehaviour
 
     public void NewGame()
     {
+
         SceneManager.LoadScene("_Start_Scene");
     }
 
