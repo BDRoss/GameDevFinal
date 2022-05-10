@@ -14,7 +14,7 @@ public class Legs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float sinTime = Mathf.Sin(Time.time);
+        float sinTime = Mathf.Sin(Time.time / 2);
         Vector3 scale = new Vector3(1, 1, 1);
 
 

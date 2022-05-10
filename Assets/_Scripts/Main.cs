@@ -134,6 +134,7 @@ public class Main : MonoBehaviour
             lives--;
             UpdateGui();
             //Handle GameOver scene here
+            sessionScore += score;
             gameOverReason = "Lives";
             SceneManager.LoadScene("_End_Screen");
         }
@@ -207,10 +208,13 @@ public class Main : MonoBehaviour
         level++;
         if(level > 3)
         {
-            SceneManager.LoadScene("WinScreen");
+            sessionScore += score;
+            gameOverReason = "Win";
+            SceneManager.LoadScene("_End_Screen");
         }
         else
         {
+            sessionScore += score;
             string newLevel = "_level_" + level;
             SceneManager.LoadScene(newLevel);
         }
@@ -218,6 +222,7 @@ public class Main : MonoBehaviour
 
     void OutOfTime()
     {
+        sessionScore += score;
         gameOverReason = "Time";
         SceneManager.LoadScene("_End_Screen"); // Doesn't need it's own function but didn't want to handle it in a GUI update
     }

@@ -32,7 +32,13 @@ public class Game_Over_Script : MonoBehaviour
             if (score > hi) PlayerPrefs.SetInt("HighScore", score);
         }
         else PlayerPrefs.SetInt("HighScore", score);
-        if (reason == "Lives")
+        if (reason == "Win") 
+        {
+            Camera cam = GetComponent<Camera>();
+            cam.backgroundColor = Color.green;
+            GameOverText.text = "You've won! You have the biggest brain! You scored " + score + " points! The highest score was " + hi + "!";
+        }
+        else if (reason == "Lives")
         {
             GameOverText.text = "You've run out of lives. Too bad! You scored " + score + " points! The highest score was " + hi + "!";
         }
