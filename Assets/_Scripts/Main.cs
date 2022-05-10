@@ -127,6 +127,7 @@ public class Main : MonoBehaviour
     public void BeeDied()
     {
         //playButton.enabled = true;
+        print(lives);
         playButton.gameObject.SetActive(true);
         if(lives == 1)
         {

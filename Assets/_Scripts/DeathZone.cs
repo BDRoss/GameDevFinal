@@ -23,7 +23,7 @@ public class DeathZone : MonoBehaviour
 
     }
 
-    protected void OnCollisionEnter(Collision coll)
+    /*protected void OnCollisionEnter(Collision coll)
     {
         GameObject otherGO = coll.gameObject;
         switch (otherGO.tag)
@@ -40,5 +40,33 @@ public class DeathZone : MonoBehaviour
                 print("Not the bee");
                 break;
         }
+    }*/
+
+    protected void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag != "Untagged") print(other.tag);
+
+        switch (other.gameObject.tag)
+        {
+            case "Bee":
+                //if (!sentDeathMessage)
+                //{
+                //if (!other)
+                //{
+                //    return;
+                //}
+                print("No destruction?");
+                Destroy(other.gameObject);
+                Main.S.BeeDied();
+                //sentDeathMessage = true;
+                // }
+                break;
+
+            default:
+                //print("Not the bee");
+                break;
+        }
     }
+
 }
