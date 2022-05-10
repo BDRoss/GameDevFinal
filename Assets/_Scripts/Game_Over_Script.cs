@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Game_Over_Script : MonoBehaviour
 {
     public Text GameOverText;
+    public Text feedbackText;
     string savePath = @".\SaveData\data.txt";
     string feedback = "";
     string reason = "Lives";
@@ -60,7 +61,7 @@ public class Game_Over_Script : MonoBehaviour
         {
             using (StreamWriter sw = File.CreateText(savePath))
             {
-                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score + " Feedback: " + feedback + ",");
+                sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score);
             }
         }
         else
@@ -68,6 +69,25 @@ public class Game_Over_Script : MonoBehaviour
             using (StreamWriter sw = File.AppendText(savePath))
             {
                 sw.WriteLine("uID: " + PlayerInfo.P.userID + " TimeOfDayPlayed: " + PlayerInfo.P.playTime + " Score: " + score);
+            }
+        }
+    }
+
+    public void submitFeedback()
+    {
+        //feedback = 
+        if (!File.Exists(savePath))
+        {
+            using (StreamWriter sw = File.CreateText(savePath))
+            {
+                sw.WriteLine("uID: " + PlayerInfo.P.userID + " Feedback: " + feedback);
+            }
+        }
+        else
+        {
+            using (StreamWriter sw = File.AppendText(savePath))
+            {
+                sw.WriteLine("uID: " + PlayerInfo.P.userID + " Feedback: " + feedback);
             }
         }
     }
